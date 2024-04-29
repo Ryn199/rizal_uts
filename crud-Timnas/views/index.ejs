@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2 class="text-center">CRUD Timnas</h2>
+      <div class="row mt-3">
+        <!-- Fitur Tambah Pemain -->
+        <div class="col-auto col-lg-2 mt-2">
+          
+            
+          </button>
+        </div>
+        
+        <!-- Fitur Para Pemain -->
+        <div class="col-auto col-lg-2 mt-2 text-right">
+          <button
+            type="button"
+            class="btn btn-primary btn-sm"
+            onclick="goToPlayersPage()"
+          >
+            Para Pemain
+          </button>
+        </div>
+        
+        <!-- Alert -->
+        <div class="col-auto col-lg-8 mt-2">
+          <% if(alert.message != "") { %>
+          <div class="alert alert-<%= alert.status %>" role="alert">
+            <%= alert.message %>
+          </div>
+          <% } %>
+        </div>
+        
+        <!-- Table -->
+        <div class="col-auto col-lg-12 mt-2"><%- include('table.ejs') %></div>
+      </div>
+    </div>
+    
+    <!-- Add Modal -->
+    <%- include('add_modal.ejs') %>
+    
+    <!-- JS -->
+    <%- include('js.ejs') %>
+    
+    <script>
+      function goToPlayersPage() {
+        window.location.href = "/players.ejs"; // Ganti dengan URL halaman Para Pemain yang diinginkan
+      }
+    </script>
+  </body>
+</html>

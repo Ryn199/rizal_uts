@@ -1,0 +1,103 @@
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="add-modal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Timnas</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="/timnas" method="POST">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="name">Nama</label>
+            <input
+              type="text"
+              class="form-control"
+              id="Nama"
+              name="Nama"
+              placeholder="Enter Nama"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">No.Punggung</label>
+            <input
+              type="number"
+              class="form-control"
+              id=""
+              name="No"
+              placeholder="Enter Number"
+              required
+              min="1"
+              max="99"
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">Posisi</label>
+            <input
+              type="text"
+              class="form-control"
+              id="Posisi"
+              name="Posisi"
+              placeholder="Enter Posisi"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">Foto</label>
+            <input
+              type="text"
+              class="form-control-file"
+              id="exampleFormControlFile1"
+              name="Foto"
+              placeholder="Enter Foto"
+              required
+            >
+          </div>
+          <div class="form-group">
+            <label for="name">Klub</label>
+            <input
+              type="text"
+              class="form-control"
+              id="Klub"
+              name="Klub"
+              placeholder="Enter Klub"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">Tanggal Naturalisasi</label>
+            <input
+              type="string"
+              class="form-control"
+              id="nama"
+              name="nama"
+              placeholder="Masukkan Tanggal"
+              required
+            >
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

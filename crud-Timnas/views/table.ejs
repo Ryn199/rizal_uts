@@ -1,0 +1,73 @@
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-outline-primary btn-sm"
+        data-toggle="modal"
+        data-target="#add-modal"
+      >
+        Add
+      </button>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table
+          class="table table-bordered"
+          id="dataTable"
+          width="100%"
+          cellspacing="0"
+        >
+          <thead
+          class="table-bordered text white">
+            <tr>
+              <th>Nama</th>
+              <th>No.Punggung</th>
+              <th>Posisi</th>
+              <th>Foto</th>
+              <th>Klub</th>
+              <th>TanggalNaturalisasi</th>
+              <th>Action</th>
+            </tr>
+        
+          </thead>
+          <tbody>
+            <% for(let i = 0; i < timnas.length; i++){ %>
+            <tr>
+              
+              <td><%= timnas[i].Nama %></td>
+              <td><%= timnas[i].NoPunggung %></td>
+              <td><%= timnas[i].Posisi %></td>
+              <td><%= timnas[i].Foto %></td>
+              <td><%= timnas[i].Klub %></td>
+              <td><%= timnas[i].TanggalNaturalisasi %></td>
+              <td class="text-center">
+                <form action="/timnas/<%= timnas[i]._id %>?_method=DELETE" method="POST">
+                  <a
+                href="javascript:void()"
+                class="btn btn-outline-warning btn-sm button-update"
+                
+                data-nama="<%= timnas[i].Nama %>"
+                data-harga="<%= timnas[i].NoPunggung %>"
+                data-deskripsi="<%= timnas[i].Posisi %>"
+                data-varian="<%= timnas[i].Foto %>"
+                data-bahan="<%= timnas[i].Klub %>"
+                data-stok="<%= timnas[i].TanggalNaturalisasi %>"
+                >Edit</a>
+                <button 
+                
+                    type="submit" 
+                    class="btn btn-outline-danger btn-sm" 
+                    onclick="return confirm('Apa kamu yakin ingin menghapus pemain ini?');">
+                  Delete
+                </button>
+              </form>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
